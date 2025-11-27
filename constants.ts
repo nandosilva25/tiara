@@ -1,5 +1,7 @@
 import { Pillar, Step, FAQItem, Testimonial } from './types';
 
+export const WHATSAPP_LINK = "https://api.whatsapp.com/send/?phone=5561982745274&text&type=phone_number&app_absent=0";
+
 export const PILLARS: Pillar[] = [
   {
     title: "Maior precisão no controle das margens tumorais",

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { WHATSAPP_LINK } from '../constants';
 
 export const Contact: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'success'>('idle');
@@ -39,7 +40,9 @@ export const Contact: React.FC = () => {
                 <Phone className="w-6 h-6 text-teal-600 mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold text-charcoal">Telefone / WhatsApp</h4>
-                  <p className="text-gray-600">(61) 99999-9999</p>
+                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-teal-600 transition-colors">
+                    (61) 98274-5274
+                  </a>
                 </div>
               </div>
 
@@ -85,7 +88,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Telefone / Celular</label>
-                    <input required type="tel" id="phone" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-shadow" placeholder="(61) 99999-9999" />
+                    <input required type="tel" id="phone" className="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-shadow" placeholder="(61) 98274-5274" />
                   </div>
                 </div>
 

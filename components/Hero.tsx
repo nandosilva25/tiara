@@ -1,9 +1,10 @@
 import React from 'react';
 import { Button } from './Button';
+import { WHATSAPP_LINK } from '../constants';
 
 export const Hero: React.FC = () => {
-  const scrollToContact = () => {
-    document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' });
+  const openWhatsApp = () => {
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
@@ -32,7 +33,7 @@ export const Hero: React.FC = () => {
           </div>
 
           <div className="pt-4">
-            <Button onClick={scrollToContact} className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+            <Button onClick={openWhatsApp} className="text-lg px-8 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
               Agendar Avaliação Especializada
             </Button>
           </div>
@@ -40,7 +41,6 @@ export const Hero: React.FC = () => {
 
         <div className="w-full md:w-1/2 relative">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white aspect-[4/5] max-w-md mx-auto">
-             {/* TODO: IMPORTANTE - Substitua o URL abaixo pelo link da imagem da Dra. Thiara enviada */}
              <img 
                src="https://cancerdepelebrasilia.com/wp-content/uploads/2025/11/foto-tiara.jpeg" 
                alt="Dra. Thiara Lenzi - Cirurgiã de Mohs" 

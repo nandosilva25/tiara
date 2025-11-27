@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './Button';
+import { WHATSAPP_LINK } from '../constants';
 
 export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,10 @@ export const Header: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const openWhatsApp = () => {
+    window.open(WHATSAPP_LINK, '_blank');
   };
 
   return (
@@ -30,7 +35,7 @@ export const Header: React.FC = () => {
             <button onClick={() => scrollTo('pilares')} className="text-gray-600 hover:text-teal-600 transition-colors">Diferenciais</button>
             <button onClick={() => scrollTo('passo-a-passo')} className="text-gray-600 hover:text-teal-600 transition-colors">O Procedimento</button>
             <button onClick={() => scrollTo('faq')} className="text-gray-600 hover:text-teal-600 transition-colors">Dúvidas</button>
-            <Button onClick={() => scrollTo('contato')} variant="primary" className="py-2 px-4">
+            <Button onClick={openWhatsApp} variant="primary" className="py-2 px-4">
               Agendar Consulta
             </Button>
           </div>
@@ -52,7 +57,7 @@ export const Header: React.FC = () => {
             <button onClick={() => scrollTo('passo-a-passo')} className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 rounded-md">O Procedimento</button>
             <button onClick={() => scrollTo('faq')} className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-teal-600 hover:bg-gray-50 rounded-md">Dúvidas</button>
             <div className="pt-4 pb-2 px-3">
-              <Button onClick={() => scrollTo('contato')} fullWidth>
+              <Button onClick={openWhatsApp} fullWidth>
                 Agendar Consulta
               </Button>
             </div>
